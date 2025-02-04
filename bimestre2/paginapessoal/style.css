@@ -6,7 +6,7 @@ img {
 }
 
 body {
-    font-family: 'Helvetica Neue', sans-serif ;
+    font-family: "Roboto Slab", serif;;
     margin: 0;
     padding: 0;
     background-color: #202A36; /* Cor de fundo principal */
@@ -132,10 +132,82 @@ section {
 
 h1 {
     color: #202A36;
-    font-size: 60px;
+    font-family: "Parisienne", serif;
+    font-size: 100px;
     text-align: left;
     margin-top: 12%;
     margin-bottom: 40%;
     margin-left: 2%;
 }
-  
+
+<style>
+    /* Estilo para a seção de Habilidades */
+    #Habilidades {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #Habilidades h3 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #0073e6;
+        padding-bottom: 5px;
+    }
+
+    #Habilidades ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    #Habilidades li {
+        margin-bottom: 20px;
+    }
+
+    #Habilidades li strong {
+        color: #0073e6;
+        font-size: 18px;
+    }
+
+    #Habilidades p {
+        color: #555;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-top: 5px;
+    }
+
+    /* Estilo para a seção de Contatos */
+    #Contatos {
+        background-color: #e9f5ff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #Contatos h3 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #0073e6;
+        padding-bottom: 5px;
+    }
+
+    #Contatos p {
+        color: #555;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Estilo para links de contato */
+    #Contatos a {
+        color: #0073e6;
+        text-decoration: none;
+    }
+
+    #Contatos a:hover {
+        text-decoration: underline;
+    }
+</style>
