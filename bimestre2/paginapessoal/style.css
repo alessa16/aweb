@@ -9,8 +9,8 @@ body {
     font-family: "Roboto Slab", serif;;
     margin: 20px;
     padding: 0;
-    background-color: #202A36; /* Cor de fundo principal */
-    color:#fefff9; /* Cor do texto principal */
+    background-color: #2C3135; /* Cor de fundo principal */
+    color:#D6C59F; /* Cor do texto principal */
     background-image: url(Home\ \(6\).jpg);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -22,8 +22,8 @@ body {
 
 /* Header */
 header {
-    background-color: #5A7088;
-    color: #fefff9;
+    background-color: #2C3135;
+    color: #D6C59F;
     padding: 10px 20px;
     position: fixed; /* Fixa o header no topo */
     top: 0;
@@ -69,7 +69,7 @@ nav ul li {
 /* Links */
 a:link,
 a:visited {
-    color: #ffffff; /* Cor dos links */
+    color: #D6C59F; /* Cor dos links */
     text-decoration: none; /* Remove o sublinhado */
     font-weight: bold; /* Texto em negrito */
     font-size: 16px; /* Tamanho da fonte */
@@ -79,8 +79,8 @@ a:visited {
 
 /* Efeito ao passar o mouse */
 nav a:hover {
-    color: #202A36; /* Cor do texto ao passar o mouse */
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    color: #2C3135; /* Cor do texto ao passar o mouse */
+    background-color: #2C3135; /* Fundo semi-transparente */
     border-radius: 5px; /* Bordas arredondadas */
 }
 
@@ -94,8 +94,9 @@ nav a:hover {
 .card {
     display: inline-block; /* Faz os cards ficarem lado a lado */
     width: 200px; /* Define um tamanho fixo */
-    background-color: #5A7088;
-    border: 2px solid #fefff9; /* Adiciona a borda */
+    background-color: #A0A8A8;
+    color: #2C3135;
+    border: 2px solid #2C3135; /* Adiciona a borda */
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -109,7 +110,7 @@ nav a:hover {
     max-height: 250px;
     object-fit: cover;
     border-radius: 5px;
-    border: 2px #202A36;
+    border: 2px #2C3135;
 }
 
 /* Títulos dos Cards */
@@ -129,23 +130,23 @@ table {
     margin-left: auto; /* Centraliza a tabela */
     margin-right: auto; /* Centraliza a tabela */
     border-collapse: collapse; /* Une as bordas */
-    border: 2px solid #5A7088; /* Cor da borda */
-    background-color: #fefff9; /* Cor de fundo */
+    border: 2px solid #A0A8A8; /* Cor da borda */
+    background-color: #D6C59F; /* Cor de fundo */
 }
 
 /* Cabeçalhos da tabela */
 th {
-    background-color: #5A7088; /* Cor de fundo */
-    color: #202A36; /* Cor do texto */
+    background-color: #A0A8A8; /* Cor de fundo */
+    color: #2C3135; /* Cor do texto */
     padding: 12px; /* Espaçamento interno */
-    border: 2px solid #5A7088; /* Bordas */
+    border: 2px solid #A0A8A8; /* Bordas */
 }
 
 /* Células da tabela */
 td {
     padding: 10px; /* Espaçamento interno */
-    border: 2px solid #5A7088;
-    color:#202A36; /* Bordas */
+    border: 2px solid #A0A8A8;
+    color:#2C3135; /* Bordas */
     text-align: center; /* Centraliza o texto */
 }
 
@@ -155,7 +156,7 @@ section {
 }
 
 h1 {
-    color: #fefff9;
+    color: #2C3135;
     font-family: "Parisienne", serif;
     font-size: 80px;
     text-align: left;
@@ -167,40 +168,40 @@ h1 {
 <style>
 
     #Habilidades {
-        background-color: #202A36;
+        background-color: #2C3135;
         padding: 20px;
         border-radius: 8px;
         margin-bottom: 20px;
     }
 
     #Educacao h3 {
-        color: #fefff9;
+        color: #D6C59F;
         font-size: 24px;
         margin-bottom: 15px;
-        border-bottom: 2px solid #fefff9;
+        border-bottom: 2px solid #D6C59F;
         padding-bottom: 5px;
     }
 
     #CURIOSIDADES h3 {
-        color: #fefff9;
+        color: #D6C59F;
         font-size: 24px;
         margin-bottom: 15px;
-        border-bottom: 2px solid #fefff9;
+        border-bottom: 2px solid #D6C59F;
         padding-bottom: 5px;
     }
     #Causos h3 {
-        color: #fefff9;
+        color: #D6C59F;
         font-size: 24px;
         margin-bottom: 15px;
-        border-bottom: 2px solid #fefff9;
+        border-bottom: 2px solid #D6C59F;
         padding-bottom: 5px;
     }
 
     #Habilidades h3 {
-        color: #fefff9;
+        color: #D6C59F;
         font-size: 24px;
         margin-bottom: 15px;
-        border-bottom: 2px solid #fefff9;
+        border-bottom: 2px solid #D6C59F;
         padding-bottom: 5px;
     }
 
@@ -214,12 +215,12 @@ h1 {
     }
 
     #Habilidades li strong {
-        color: #fefff9;
+        color: #D6C59F;
         font-size: 18px;
     }
 
     #Habilidades p {
-        color: #fefff9;
+        color: #D6C59F;
         font-size: 16px;
         line-height: 1.6;
         margin-top: 5px;
@@ -227,29 +228,28 @@ h1 {
 
     /* Estilo para a seção de Contatos */
     #Contatos {
-        background-color: #fefff9;
+        background-color: #D6C59F;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     #Contatos h3 {
-        color: #333;
+        color: #2C3135;
         font-size: 24px;
         margin-bottom: 0px;
-        border-bottom: 2px solid #fefff9;
+        border-bottom: 2px solid #D6C59F;
         padding-bottom: 5px;
     }
 
     #Contatos p {
-        color: #202A36;
+        color: #2C3135;
         font-size: 16px;
         line-height: 1.6;
     }
 
     /* Estilo para links de contato */
     #Contatos a {
-        color: #202A36;
+        color: #2C3135;
         text-decoration: none;
     }
 
