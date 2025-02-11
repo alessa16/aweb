@@ -10,6 +10,19 @@ body {
     align-items: center;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header header header header header header header header header"
+        "hero hero hero hero hero hero hero . . . . . "
+        ". . sobre sobre sobre sobre sobre sobre sobre sobre . ."
+        "curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades"
+        ". . cards cards cards cards cards cards cards cards . ."
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
 /* Header */
 header {
     background-color:#F7689D;
@@ -62,8 +75,6 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
     align-items: center;
     gap: 20px;
     width: 100%;
