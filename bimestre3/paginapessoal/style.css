@@ -3,32 +3,20 @@ body {
     font-size: 20px;
     margin: 0;
     padding: 0;
-    background-color: #EEEDEB; 
-    color: #59A5E3; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container {
+    background-color: #EEEDEB;
+    color: #59A5E3;
     display: grid;
-    grid-template-columns: repeat(12, 1fr); 
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "header header header header header header header header header header header header"
-        "hero hero hero hero hero hero hero . . . . . "
-        ". . sobre sobre sobre sobre sobre sobre sobre sobre . ."
-        "curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades curiosidades"
-        ". . cards cards cards cards cards cards cards cards . ."
-        "footer footer footer footer footer footer footer footer footer footer footer footer";
+    grid-template-columns: repeat(12, 1fr); /* 12 colunas para desktop */
+    gap: 0;
+    height: 100vh;
 }
 
-/* Header */
+/* Cabeçalho */
 header {
-    background-color:#F7689D;
+    background-color: #F7689D;
     color: #EEEDEB;
     padding: 10px 40px;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -37,12 +25,12 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    grid-column: 1 / -1; /* O header ocupa todas as colunas */
 }
 
 header .logo {
     font-size: 24px;
     font-weight: bold;
-    padding-left: 20px;
 }
 
 header nav {
@@ -50,7 +38,7 @@ header nav {
 }
 
 nav ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
@@ -75,16 +63,19 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Hero ocupa as 12 colunas */
+    gap: 0;
     width: 100%;
-    height: 924px;
-    padding-top: 80px;
+    height: calc(100vh - 100px); /* Hero ocupa o restante da altura */
+    grid-column: 1 / -1;
+    padding-top: 100px;
 }
 
 .hero-text {
     grid-column: span 6;
     text-align: left;
+    padding-top: 20%;
     padding-left: 10%;
     font-family: "Spicy Rice", serif;
     font-size: 45px;
@@ -93,44 +84,52 @@ a:hover {
 .hero-image {
     grid-column: span 6;
     display: flex;
-    justify-content: center;
-    padding-top: 5%;
+    justify-content: right;
+    padding-top: 20%;
+    padding-left: 10px;
+    height: 600px;
+    width: 600px;
 }
 
 .hero img {
     width: 80%;
     max-width: 400px;
     border-radius: 100%;
-    margin-top: 30px;
 }
 
-#Sobre h2{
-    grid-column: span 8;
-    justify-content:left;
-    margin-top: 100px;
-}
-
+/* Sobre Mim */
 #Sobre {
-    grid-column: span 8;
+    grid-column: 2 / 12; /* 8 colunas centrais */
+    margin-top: 100px;
     padding-left: 10%;
     padding-right: 10%;
-    justify-content:center;
-    padding-bottom: 0px;
-    }
+}
+
+#Sobre h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Curiosidades */
+#Curiosidades {
+    grid-column: 2 / 12; /* 8 colunas centrais */
+    margin-top: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 #Curiosidades h2 {
-    grid-column: span 8;
-    margin-top: 100px;
-    justify-content:left;
-    }
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+}
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
     gap: 10px;
-    width: 80%;
-    margin: 40px auto;
-    grid-column: 3/11;
+    margin-top: 40px;
 }
 
 .card {
@@ -143,8 +142,7 @@ a:hover {
 
 .card img {
     width: 100%;
-    max-height: 200px;
-    object-fit: cover;
+    height: auto;
     border-radius: 5px;
 }
 
@@ -157,80 +155,150 @@ footer {
     width: 100%;
     height: 200px;
     margin-top: 100px;
+    grid-column: 1 / -1; /* Footer ocupa todas as colunas */
 }
 
-@media screen and (max-width: 395px) and (max-height: 844px) {
-    body {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        /* display: flex; */
-    }
-    header {
-        width: 100%;
-        grid-column: 1/ -1;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-    }
-    .topo {
-        width: 90%;
-        border-radius: 10px;
-        height: 100px;
-        position: sticky;
-        bottom: 0;
-        z-index: 10;
-        justify-content: center;
-    }
-    .perfil {
-        width: 350px;
-        height: 350px;
-    }  
-    .hero {
-        text-align: justify;
-        height: calc(100vh - 150px);
-        display: block;
-        gap: 30px;
-    }
-    .text {
-        text-align: start;
+footer p {
+    margin: 5px;
+}
 
+footer i {
+    margin-right: 10px;
+}
+
+/* Media Query para dispositivos móveis (máximo de 768px) */
+@media screen and (max-width: 768px) {
+    /* Corpo */
+    body {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas para mobile */
+        font-size: 16px; /* Ajuste o tamanho da fonte para dispositivos menores */
     }
-    .text p {
-        font-size: 20px;
-        text-align: justify;
-    }
-    .img {
-        /* border-radius: 35%; */
+
+    /* Cabeçalho (Header) */
+    header {
+        width: 90%; /* Reduz a largura do cabeçalho */
+        height: 100px; /* Mantém a altura do cabeçalho */
+        border-radius: 15px; /* Bordas arredondadas */
+        position: fixed;
+        bottom: 0; /* Fixa o cabeçalho na parte inferior */
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza o cabeçalho */
         display: flex;
-        justify-content: end;
-        align-items: end;
-        margin-right: 100px;
+        justify-content: space-between;
+        align-items: center;
     }
-    .text h1 {
-        font-size: 70px;
-        margin-bottom: 10px;
-        text-align: start;
+
+    header .logo {
+        font-size: 20px; /* Tamanho menor da logo */
+        padding-left: 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Alinha os links em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Espaçamento entre os itens do menu */
+    }
+
+    a {
+        font-size: 14px; /* Ajuste o tamanho da fonte para dispositivos menores */
+    }
+
+    /* Hero Section */
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr; /* Hero ocupa a largura total */
+        height: calc(100vh - 100px); /* Ajusta a altura do Hero */
+        padding-top: 50px; /* Ajusta o padding */
+    }
+
+    .hero-text {
+        grid-column: span 4;
+        text-align: center; /* Centraliza o texto */
+        padding-left: 10%;
+        padding-right: 10%;
         font-family: "Spicy Rice", serif;
+        font-size: 28px; /* Tamanho menor do texto */
     }
-    #SOBRE h3, #CURIOSIDADES h3{
+
+    .hero-image {
+        grid-column: span 4;
+        display: flex;
+        justify-content: center; /* Centraliza a imagem */
+        padding-top: 5%;
+    }
+
+    .hero img {
+        width: 80%; /* Ajusta o tamanho da imagem */
+        max-width: 300px; /* Limita o tamanho máximo da imagem */
+        border-radius: 100%;
+    }
+
+    /* Sobre Mim */
+    #Sobre {
+        grid-column: 1 / -1; /* Preenche todas as colunas */
+        margin-top: 120px;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #Sobre h2 {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    /* Curiosidades */
+    #Curiosidades {
+        grid-column: 1 / -1; /* Preenche todas as colunas */
+        margin-top: 100px;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: center; /* Centraliza o título */
+    }
+
+    #Curiosidades h2 {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    /* Cards */
+    .cards {
+        grid-template-columns: 1fr; /* 1 card por linha */
+        gap: 20px;
+    }
+
+    .card {
+        background-color: #F7689D;
+        color: #EEEDEB;
+        border-radius: 10px;
+        padding: 20px;
         text-align: center;
     }
-    #SOBRE, #CURIOSIDADES {
-        grid-column: 1/-1;
-        padding: 15px;
-        text-align: center;
-        margin: 0 10px;
-    }
-    .cards-container{
-        grid-template-columns: 1fr;
-    }
+
     .card img {
-        width: 280px;
+        width: 100%; /* Ajusta a largura da imagem */
         height: auto;
+        border-radius: 5px;
     }
+
+    /* Footer */
     footer {
         width: 100%;
         height: 200px;
         margin-top: 100px;
+        grid-column: 1 / -1; /* Preenche todas as colunas */
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer p {
+        margin: 5px;
+    }
+
+    footer i {
+        margin-right: 10px;
     }
 }
