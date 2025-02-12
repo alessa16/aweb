@@ -34,7 +34,7 @@ header .logo {
 }
 
 header nav {
-    padding-right: 5%;
+    padding-right: 10%;
 }
 
 nav ul {
@@ -87,7 +87,7 @@ a:hover {
     justify-content: right;
     padding-top: 20%;
     padding-left: 10px;
-    height: 600px;
+    height: 500px;
     width: 600px;
 }
 
@@ -97,23 +97,23 @@ a:hover {
     border-radius: 100%;
 }
 
-/* Sobre Mim */
 #Sobre {
     grid-column: 2 / 12; /* 8 colunas centrais */
     margin-top: 100px;
     padding-left: 10%;
     padding-right: 10%;
+    text-align: center;
 }
 
 #Sobre h2 {
     font-size: 36px;
     font-weight: bold;
     text-align: left;
+    padding-top: 0%;
 }
 
-/* Curiosidades */
 #Curiosidades {
-    grid-column: 2 / 12; /* 8 colunas centrais */
+    grid-column: 2 / 12; 
     margin-top: 100px;
     padding-left: 10%;
     padding-right: 10%;
@@ -166,83 +166,91 @@ footer i {
     margin-right: 10px;
 }
 
-/* Media Query para dispositivos móveis (máximo de 768px) */
 @media screen and (max-width: 768px) {
-    /* Corpo */
     body {
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas para mobile */
-        font-size: 16px; /* Ajuste o tamanho da fonte para dispositivos menores */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+        font-size: 16px;
+        min-height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    /* Cabeçalho (Header) */
+    /* HEADER */
     header {
-        width: 90%; /* Reduz a largura do cabeçalho */
-        height: 100px; /* Mantém a altura do cabeçalho */
-        border-radius: 15px; /* Bordas arredondadas */
+        width: 100%;
+        height: 100px;
+        border-radius: 15px;
         position: fixed;
-        bottom: 0; /* Fixa o cabeçalho na parte inferior */
-        left: 50%;
-        transform: translateX(-50%); /* Centraliza o cabeçalho */
+        top: 0;
+        left: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background-color: #F7689D;
+        padding: 10px;
+        transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
     }
 
     header .logo {
-        font-size: 20px; /* Tamanho menor da logo */
-        padding-left: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: opacity 0.3s ease-in-out;
     }
 
-    nav ul {
-        flex-direction: column; /* Alinha os links em coluna */
-        align-items: center; /* Centraliza os itens */
+    header nav {
+        display: flex;
+        gap: 15px;
     }
 
-    nav ul li {
-        margin-bottom: 10px; /* Espaçamento entre os itens do menu */
+    header nav a {
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s ease-in-out;
     }
 
-    a {
-        font-size: 14px; /* Ajuste o tamanho da fonte para dispositivos menores */
-    }
-
-    /* Hero Section */
+    /* HERO */
     .hero {
         display: grid;
-        grid-template-columns: 1fr; /* Hero ocupa a largura total */
-        height: calc(100vh - 100px); /* Ajusta a altura do Hero */
-        padding-top: 50px; /* Ajusta o padding */
-    }
-
-    .hero-text {
-        grid-column: span 4;
-        text-align: center; /* Centraliza o texto */
-        padding-left: 10%;
-        padding-right: 10%;
-        font-family: "Spicy Rice", serif;
-        font-size: 28px; /* Tamanho menor do texto */
+        grid-template-columns: repeat(4, 1fr);
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+        align-items: center;
+        padding: 20px;
     }
 
     .hero-image {
         grid-column: span 4;
         display: flex;
-        justify-content: center; /* Centraliza a imagem */
-        padding-top: 5%;
+        justify-content: center;
     }
 
     .hero img {
-        width: 80%; /* Ajusta o tamanho da imagem */
-        max-width: 300px; /* Limita o tamanho máximo da imagem */
+        width: 80%;
+        max-width: 300px;
         border-radius: 100%;
     }
 
-    /* Sobre Mim */
+    .hero-text {
+        grid-column: span 4;
+        padding: 20px;
+        font-size: 28px;
+    }
+
+    /* SOBRE MIM */
     #Sobre {
-        grid-column: 1 / -1; /* Preenche todas as colunas */
-        margin-top: 120px;
-        padding-left: 10%;
-        padding-right: 10%;
-        text-align: center; /* Centraliza o texto */
+        grid-column: span 4;
+        margin-top: 100px;
+        text-align: center;
+        padding: 0 5%;
+        width: 100vw;
     }
 
     #Sobre h2 {
@@ -250,13 +258,13 @@ footer i {
         font-weight: bold;
     }
 
-    /* Curiosidades */
+    /* CURIOSIDADES */
     #Curiosidades {
-        grid-column: 1 / -1; /* Preenche todas as colunas */
+        grid-column: span 4;
         margin-top: 100px;
-        padding-left: 10%;
-        padding-right: 10%;
-        text-align: center; /* Centraliza o título */
+        text-align: center;
+        padding: 0 5%;
+        width: 100vw;
     }
 
     #Curiosidades h2 {
@@ -264,13 +272,16 @@ footer i {
         font-weight: bold;
     }
 
-    /* Cards */
+    /* CARDS */
     .cards {
-        grid-template-columns: 1fr; /* 1 card por linha */
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        width: 100vw;
     }
 
     .card {
+        grid-column: span 4;
         background-color: #F7689D;
         color: #EEEDEB;
         border-radius: 10px;
@@ -279,19 +290,21 @@ footer i {
     }
 
     .card img {
-        width: 100%; /* Ajusta a largura da imagem */
+        width: 100%;
         height: auto;
         border-radius: 5px;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
-        width: 100%;
+        width: 100vw;
         height: 200px;
         margin-top: 100px;
-        grid-column: 1 / -1; /* Preenche todas as colunas */
+        grid-column: span 4;
         padding: 20px;
         text-align: center;
+        background-color: #222;
+        color: white;
     }
 
     footer p {
